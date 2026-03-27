@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarketPilot AI - Equity Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">AI + Quant + Sentiment</p>
+        <h1>MarketPilot Intelligence Console</h1>
+        <p class="subtitle">
+          Analyze multiple US tickers with a machine-learning scoring engine that blends
+          historical behavior, financial quality, and headline sentiment.
+        </p>
+      </section>
+
+      <section class="panel input-panel">
+        <div class="panel-head">
+          <h2>Portfolio Daniel Dompreh Universe</h2>
+          <span class="badge">Minimum 7 tickers</span>
+        </div>
+
+        <form id="analyze-form">
+          <label for="tickers">Enter comma-separated tickers</label>
+          <textarea
+            id="tickers"
+            placeholder="AAPL, MSFT, NVDA, AMZN, META, GOOGL, TSLA"
+            required
+          ></textarea>
+
+          <div class="actions">
+            <button id="analyze-btn" type="submit">Run AI Analysis</button>
+            <button id="download-json" class="ghost" type="button" disabled>
+              Download JSON Report
+            </button>
+            <button id="download-md" class="ghost" type="button" disabled>
+              Download Markdown Report
+            </button>
+          </div>
+        </form>
+
+        <p id="status" class="status"></p>
+      </section>
+
+      <section class="panel summary-panel">
+        <div class="panel-head">
+          <h2>Signal Summary</h2>
+          <p id="summary-text">Awaiting analysis...</p>
+        </div>
+        <div id="summary-grid" class="summary-grid"></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="panel-head">
+          <h2>Price and Trend Visualization</h2>
+          <select id="ticker-select"></select>
+        </div>
+        <canvas id="price-chart" height="120"></canvas>
+      </section>
+
+      <section class="panel reports-panel">
+        <div class="panel-head">
+          <h2>Comprehensive Ticker Reports</h2>
+        </div>
+        <div id="reports"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
